@@ -1,7 +1,7 @@
 /*!** Begin file: homepage.css ***/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 #homepage-wrap{width:inherit;margin:0 auto}input::-webkit-input-placeholder{color:#9f9f9f!important}input:-moz-placeholder{color:#9f9f9f!important}input::-moz-placeholder{color:#9f9f9f!important}input:-ms-input-placeholder{color:#9f9f9f!important}
-body{font-family:Noto Sans,Helvetica;font-size:14px;color:#4d4d4d}
+body{font-family:Noto Sans,Helvetica;font-size:15px;color:#4d4d4d}
 a,span,area,button,input{outline:0!important;text-decoration:none;color:inherit}
 a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoration:none;color:inherit}
 .category-items{display:flex;justify-content:space-between}
