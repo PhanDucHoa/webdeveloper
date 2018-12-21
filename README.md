@@ -4,7 +4,7 @@
 
 ## Preview
 
-[![Modern Business Preview](https://imgur.com/a/vXEWqj3)](https://blackrockdigital.github.io/startbootstrap-modern-business/)
+[![Modern Business Preview](https://i.imgur.com/FrRWAvd.jpg)](https://blackrockdigital.github.io/startbootstrap-modern-business/)
 
 **[View Live Preview](https://blackrockdigital.github.io/startbootstrap-modern-business/)**
 
