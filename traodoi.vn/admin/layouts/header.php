@@ -1,3 +1,6 @@
+<?php 
+    require_once __DIR__. "/../autoload/autoload.php";
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,13 +11,13 @@
         <meta name="author" content="">
         <title>TraoDoi.VN | Admin</title>
         <!-- Bootstrap core CSS-->
-        <link href="/traodoivn/public/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>/public/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template-->
-        <link href="/traodoivn/public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url() ?>/public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <!-- Page level plugin CSS-->
-        <link href="/traodoivn/public/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>/public/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
         <!-- Custom styles for this template-->
-        <link href="/traodoivn/public/admin/css/sb-admin.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>/public/admin/css/sb-admin.css" rel="stylesheet">
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -64,10 +67,10 @@
                     <i class="fas fa-user-circle fa-fw"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <a class="dropdown-item" href="#">Cài đặt</a>
+                        <a class="dropdown-item" href="#">Lịch sử hoạt động</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Đăng xuất</a>
                     </div>
                 </li>
             </ul>
@@ -76,15 +79,15 @@
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="<?php echo modules("admin") ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                    <span>Bảng điều khiển</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Các chức năng</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                         <h6 class="dropdown-header">Login Screens:</h6>
@@ -98,13 +101,23 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <a class="nav-link" href="<?php echo modules("category") ?>">
+                    <i class="fas fa-fw fa-list-alt"></i>
+                    <span>Các danh mục</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo modules("product") ?>">
+                    <i class="fas fa-fw fa-list-alt"></i>
+                    <span>Các sản phẩm</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo modules("report") ?>">
+                    <i class="fas fa-fw fa-flag"></i>
+                    <span>Báo cáo</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <i class="fas fa-fw fa fa-th-list"></i>
+                    <span>Thống kê</span></a>
                 </li>
             </ul>

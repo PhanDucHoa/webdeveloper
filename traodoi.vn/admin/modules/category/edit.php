@@ -1,5 +1,14 @@
 <?php 
+    $open = "category";
     require_once __DIR__. "/../../autoload/autoload.php";
+    $id = intval(getInput('id'));
+
+    $EditCategory = $db->fetchID("category",$id);
+    if (empty($EditCategory))
+    {
+        $_SESSION['error'] = "Dữ liệu không tồn tại!";
+        redirectAdmin("category");
+    }
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $data = 
@@ -14,25 +23,42 @@
         }
         if (empty($error))
         {
-            $isset = $db->fetchOne("category","name = '".$data['name']."'");
-            if (count($isset) > 0)
-            {
-                $_SESSION['error'] = "Danh mục đã tồn tại!";
-            }
-            else 
-            {
-                $id_insert = $db->insert("category",$data);
-                if ($id_insert > 0)
+                if ($EditCategory['name'] != $data['name'])
+                {
+                    $isset = $db->fetchOne("category","name = '".$data['name']."'");
+                    if (count($isset) > 0)
                     {
-                        $_SESSION['success'] = "Thêm mới thành công.";
+                        $_SESSION['error'] = "Danh mục đã tồn tại!";
+                    }
+                    else 
+                    {
+                        $id_update = $db->update("category",$data,array('id'=>$id));
+                        if ($id_update > 0)
+                        {
+                            $_SESSION['success'] = "Cập nhật thành công.";
+                            redirectAdmin("category");
+                        }
+                        else
+                        {
+                        $_SESSION['error'] = "Dữ liệu không thay đổi.";
                         redirectAdmin("category");
+                        }
                     }
+                }
                 else
-                    {
-                $_SESSION['error'] = "Có lỗi xảy ra. Vui lòng thử lại.";
-                    }
-            }
-
+                {
+                    $id_update = $db->update("category",$data,array('id'=>$id));
+                        if ($id_update > 0)
+                        {
+                            $_SESSION['success'] = "Cập nhật thành công.";
+                            redirectAdmin("category");
+                        }
+                        else
+                        {
+                        $_SESSION['error'] = "Dữ liệu không thay đổi.";
+                        redirectAdmin("category");
+                        }
+                }
         }
     }
  ?>
@@ -49,10 +75,10 @@
                                 <li class="breadcrumb-item">
                                     <a href="<?php echo modules("category") ?>">Các danh mục (Category)</a>
                                 </li>
-                                <li class="breadcrumb-item active">Thêm mới</li>
+                                <li class="breadcrumb-item active">Sửa</li>
                             </ol>
                             <!-- Page Content -->
-                            <h1>Thêm mới danh mục</h1>
+                            <h1>Chỉnh sửa danh mục</h1>
                             <hr>
                             <div class="clearfix"></div>
                             <?php if (isset($_SESSION['error'])) :?>
@@ -66,7 +92,7 @@
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên danh mục</label>
-                                    <input type="text" class="form-control" id="InputName" placeholder="Tên danh mục" name="name">
+                                    <input type="text" class="form-control" id="InputName" placeholder="Tên danh mục" name="name" value="<?php echo $EditCategory['name'] ?>">
                                 </div>
                                 <?php if (isset($error['name'])): ?>
                                     <p class="text-danger"> <?php echo $error['name'] ?> </p>
