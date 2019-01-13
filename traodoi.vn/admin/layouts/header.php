@@ -111,6 +111,11 @@
                     <span>Các sản phẩm</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo modules("admin") ?>">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Quản trị viên</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo modules("report") ?>">
                     <i class="fas fa-fw fa-flag"></i>
                     <span>Báo cáo</span></a>

@@ -1,0 +1,228 @@
+
+.body {
+	padding-top: 54px;
+  }
+  
+  @media (min-width: 992px) {
+	.body {
+	  padding-top: 56px;
+	}
+  }
+  
+.carousel-item {
+	height: 65vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+  
+.portfolio-item {
+	margin-bottom: 30px;
+  }
+  
+.navbar-brand {
+	  border-top-left-radius: calc(.50rem - 1px);
+	  border-top-right-radius: calc(.50rem - 1px);
+	  border-bottom-left-radius: calc(.50rem - 1px);
+	  border-bottom-right-radius: calc(.50rem - 1px);
+	  color: #fff;
+	  background: -webkit-linear-gradient(left top,#5343E8,#9654DD);
+	  background: -o-linear-gradient(left top,#5343E8,#9654DD);
+	  background: -moz-linear-gradient(left top,#5343E8,#9654DD);
+	  background: linear-gradient(left top,#5343E8,#9654DD);
+  }
+  
+.nav-item {
+	  border-top-left-radius: calc(.50rem - 1px);
+	  border-top-right-radius: calc(.50rem - 1px);
+	  border-bottom-left-radius: calc(.50rem - 1px);
+	  border-bottom-right-radius: calc(.50rem - 1px);
+	  color: #fff;
+	  background: -webkit-linear-gradient(left top,#5343E8,#9654DD);
+	  background: -o-linear-gradient(left top,#5343E8,#9654DD);
+	  background: -moz-linear-gradient(left top,#5343E8,#9654DD);
+	  background: linear-gradient(left top,#5343E8,#9654DD);
+  }
+  
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: 600;}
+	  
+.card-img-top{  
+	  max-width:158px;
+	  max-height:158px;
+	  object-fit: cover;
+  }
+  
+
+/* Navigate */
+.homepage-size {
+	width: 1050px;
+	margin: 0 auto;
+}
+
+.header-top {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 10px;
+}
+
+.header-menus {
+	display: flex;
+	justify-content: space-between;
+	margin: 22px 0 0 0;
+}
+
+.header-menus > div {
+	margin: auto 0;
+}
+
+.header-menu {
+	padding-right: 15px;
+}
+  
+.appWrapper-Header-navItem {
+	float: right;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+.appWrapper-Header-primaryButton {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	background: #fc9807;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 4px;
+	padding: 8px;
+    text-decoration: none;
+    margin: 10px;
+}
+  
+  /* Slider 3 text */
+
+  .special{
+      color:#fc9807;
+  }
+
+
+  /* category item */
+
+.browse-title {
+	font-weight: bold;
+	font-size: 24px;
+	color: #4d4d4d;
+	text-align: left;
+	padding: 33px 0 20px;
+}
+
+.category-brief {
+	margin-top: -22px;
+	margin-bottom: 16px;
+	font-size: 13px;
+	color: #4d4d4d;
+}
+
+.category-items {
+	display: flex;
+	justify-content: space-between;
+}
+
+.category-items > a {
+	width: 94px;
+	height: 110px;
+	border: 1px solid #e6e6e6;
+	border-radius: 2px;
+	text-align: center;
+	background-color: #fafafa;
+}
+
+.category-items > a > img {
+	margin: 18px 0 0 0;
+	width: 45px;
+	height: 45px;
+}
+
+.trackable:hover path {
+      fill:red;
+}
+
+.category-items > a > div {
+	font-size: 11px;
+	color: #4d4d4d;
+	padding: 10px 5px;
+	line-height: 1.3;
+}
+
+img {
+	vertical-align: middle;
+}
+
+img {
+	border: 0;
+}
+
+
+.svg:hover {
+      filter: invert(1) sepia(10) saturate(50) hue-rotate(328deg);
+    }
+
+
+/* Footer */    
+
+.context-dark, .bg-gray-dark, .bg-primary {
+    color: black;
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: black;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0; 
+    opacity: 1;
+    visibility: visible;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+.social-container .col {
+    border: 1px solid rgba(114, 108, 108, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color:#d94b4b;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -20px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}

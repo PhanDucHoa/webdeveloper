@@ -1,5 +1,5 @@
 <?php 
-    $open = "product";
+    $open = "admin";
     require_once __DIR__. "/../../autoload/autoload.php";
 
     if (isset($_GET['page']))
@@ -11,14 +11,14 @@
         $p = 1;
     }
 
-    $sql = "SELECT product.*,category.name as namecate FROM product LEFT JOIN category on category.id = product.category_id";
+    $sql = "SELECT admin.* from admin";
 
     
-    $product = $db->fetchJone("product",$sql,$p,10,true);
-    if(isset($product['page']))
+    $admin = $db->fetchJone("admin",$sql,$p,10,true);
+    if(isset($admin['page']))
     {
-        $sotrang = $product['page'];
-        unset($product['page']);
+        $sotrang = $admin['page'];
+        unset($admin['page']);
     }
  ?>
 <?php require_once __DIR__. "/../../layouts/header.php"; ?>
@@ -29,12 +29,12 @@
                         <div class="container-fluid">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="index.php">Dashboard</a>
+                                    <a href="/../index.php">Dashboard</a>
                                 </li>
-                                <li class="breadcrumb-item active">Các sản phẩm (Products)</li>
+                                <li class="breadcrumb-item active">Quản lý Admin</li>
                             </ol>
                             <!-- Page Content -->
-                            <h1>Danh sách các sản phẩm (Products)</h1>
+                            <h1>Danh sách các Admin</h1>
                             <hr>
                             <a href="add.php" class="btn btn-info">Thêm mới</a>
                             <hr>
@@ -43,7 +43,7 @@
                                 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Bảng sản phẩm
+        Bảng Admin
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -63,8 +63,8 @@
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 61px;">ID</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 83px;">Name</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 49px;">Created</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Category</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Thumbnail</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Email</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Rank</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 64px;">Action</th>
                                 </tr>
                             </thead>
@@ -73,21 +73,19 @@
                                     <th rowspan="1" colspan="1">ID</th>
                                     <th rowspan="1" colspan="1">Name</th>
                                     <th rowspan="1" colspan="1">Created</th>
-                                    <th rowspan="1" colspan="1">Category</th>
-                                    <th rowspan="1" colspan="1">Thumbnail</th>
+                                    <th rowspan="1" colspan="1">Email</th>
+                                    <th rowspan="1" colspan="1">Rank</th>
                                     <th rowspan="1" colspan="1">Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php foreach ($product as $item): ?>
+                                <?php foreach ($admin as $item): ?>
                                 <tr role="row" class="odd">
                                     <td class="sorting_1"><?php echo $item['id']  ?></td>
                                     <td><?php echo $item['name']  ?></td>
                                     <td><?php echo $item['created_at']  ?></td>
-                                    <td><?php echo $item['namecate']  ?></td>
-                                    <td>
-                                        <img src="<?php echo uploads() ?>product/<?php echo $item['thumbnail'] ?>" width="80px" height="80px">
-                                    </td>
+                                    <td><?php echo $item['email']  ?></td>
+                                    <td><?php echo $item['rank']  ?></td>
                                     <td>
                                         <a class="btn btn-xs btn-success" href="edit.php?id=<?php echo $item['id'] ?>">Sửa</a>
                                         <a class="btn btn-xs btn-danger" href="delete.php?id=<?php echo $item['id'] ?>">Xóa</a>
