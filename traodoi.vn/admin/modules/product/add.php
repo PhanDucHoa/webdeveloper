@@ -23,7 +23,7 @@
         }
         if (! isset ($_FILES['thumbnail']))
         {
-            $error['category_id'] = "Bạn cần đăng ảnh sản phẩm!";     
+            $error['thumbnail'] = "Bạn cần đăng ảnh sản phẩm!";     
         }
         if (empty($error))
         {

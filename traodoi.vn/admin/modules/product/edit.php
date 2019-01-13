@@ -1,8 +1,7 @@
 <?php 
-    $open = "product";
     require_once __DIR__. "/../../autoload/autoload.php";
 
-    $category = $db->fetchAll("category");
+
     $id = intval(getInput('id'));
 
     $EditProduct = $db->fetchID("product",$id);
@@ -11,6 +10,8 @@
         $_SESSION['error'] = "Dữ liệu không tồn tại!";
         redirectAdmin("product");
     }
+    $category = $db->fetchAll("category");
+    $product = $db->fetchAll("product");
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $data = 
@@ -30,7 +31,7 @@
         }
         if (! isset ($_FILES['thumbnail']))
         {
-            $error['category_id'] = "Bạn cần đăng ảnh sản phẩm!";     
+            $error['thumbnail'] = "Bạn cần đăng ảnh sản phẩm!";     
         }
         if (empty($error))
         {
@@ -46,21 +47,21 @@
                     $data['thumbnail'] = $file_name;
                 }
             }
-            $id_insert = $db->insert("product",$data);
-            if ($id_insert)
+            $update = $db->update("product",$data,array("id"=>$id));
+            if ($update > 0)
             {
                 move_uploaded_file($file_tmp, $part.$file_name);
-                $_SESSION['success'] = "Thêm mới thành công.";
+                $_SESSION['success'] = "Cập nhật thành công.";
                 redirectAdmin('product');
             }
             else
             {
-                $_SESSION['error'] = "Lỗi xảy ra khi thêm mới sản phẩm. Vui lòng thử lại.";
+                $_SESSION['error'] = "Lỗi xảy ra khi cập nhật sản phẩm. Vui lòng thử lại.";
+                redirectAdmin('product');
+            }
             }
 
-
         }
-    }
     
  ?>
 <?php require_once __DIR__. "/../../layouts/header.php"; ?>
@@ -79,7 +80,7 @@
                                 <li class="breadcrumb-item active">Sửa</li>
                             </ol>
                             <!-- Page Content -->
-                            <h1>Chỉnh sửa danh mục</h1>
+                            <h1>Sửa sản phẩm</h1>
                             <hr>
                             <div class="clearfix"></div>
                             <?php if (isset($_SESSION['error'])) :?>
@@ -102,13 +103,19 @@
                                     <label for="exampleInputEmail1">Danh mục sản phẩm</label>
                                     <select class="form-control" name="category_id">
                                         <option value="">- Chọn danh mục phù hợp với sản phẩm -</option>
-                                        <?php foreach ($category as $item):?>
-                                            <option value="<?php echo $item['id'] ?>"<?php echo $EditProduct['category_id'] == $item['id'] ? "selected = 'selected" : '' ?>><?php echo $item['name'] ?></option>
+                                        <?php foreach ($category as $item): ?>
+                                            <option value="<?php echo $item['id'] ?>"
+                                                <?php echo $EditProduct['category_id'] == $item['id'] 
+                                                ? 'selected = "selected"' : '' ?>><?php echo $item['name'] ?>
+                                            </option>
                                         <?php endforeach ?>
                                     </select>
                                     <?php if (isset($error['category_id'])): ?>
                                     <p class="text-danger"> <?php echo $error['category_id'] ?> </p>
                                 <?php endif ?>
+                                </div>
+                                <div>
+                                    <img src="<?php echo uploads() ?>product/<?php echo $EditProduct['thumbnail'] ?>" witdh="100px" height="100px">
                                 </div>
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
