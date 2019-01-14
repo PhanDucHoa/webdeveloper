@@ -1,5 +1,5 @@
 
-<?php require_once __DIR__. "/../layouts/header.php"; ?> 
+<?php require_once __DIR__. "/layouts/header.php"; ?> 
 <?php 
   $sql = "SELECT * FROM product ORDER BY ID DESC LIMIT 6";
   $product = $db->fetchsql($sql);
@@ -82,11 +82,11 @@
       <?php foreach ($product as $item): ?>
         <div class="col-lg-2 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="<?php echo uploads() ?>product/<?php echo $item['thumbnail'] ?>"
+          <a href="chi-tiet-san-pham.php?id=<?php echo $item['id'] ?>"><img class="card-img-top" src="<?php echo uploads() ?>product/<?php echo $item['thumbnail'] ?>"
               alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><?php echo $item['name']  ?></a>
+              <a href="chi-tiet-san-pham.php?id=<?php echo $item['id'] ?>"><?php echo $item['name']  ?></a>
             </h4>
             <p class="card-text"><?php echo $item['description']  ?></p>
           </div>
@@ -147,4 +147,4 @@
 
   <!-- Footer -->
 
-<?php require_once __DIR__. "/../layouts/footer.php"; ?> 
+<?php require_once __DIR__. "/layouts/footer.php"; ?> 

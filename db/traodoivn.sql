@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 14, 2019 at 10:41 AM
+-- Generation Time: Jan 14, 2019 at 03:28 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -178,7 +178,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `phone`, `address`, `password`, `province`, `status`, `rating`, `created_at`, `updated_at`) VALUES
+(3, 'kaito', 'pthuy7448@gmail.com', '123', 'Đồng Khởi, Biên Hòa', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-14 14:30:54', '2019-01-14 14:30:54');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
