@@ -41,11 +41,11 @@
 
         <div class="header-menu">
           <a href="" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)" data-xtn2="91"
-            data-page_name="Header (Homepage 2018)::Thông Báo" data-click_type="A">Thông Báo</a>
+            data-page_name="Header (Homepage 2018)::Thông Báo" data-click_type="A">Đăng Nhập</a>
         </div>
         <div>
           <a href="" id="btn-login" tabindex="0" role="button" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)"
-            data-xtn2="91" data-page_name="Header (Homepage 2018)::Login" data-click_type="A">Đăng Nhập</a>
+            data-xtn2="91" data-page_name="Header (Homepage 2018)::Login" data-click_type="A">Đăng Kí</a>
         </div>
 
         <div class="appWrapper-Header-navItem">

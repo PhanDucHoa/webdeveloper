@@ -3,6 +3,7 @@
 <?php 
   $sql = "SELECT * FROM product ORDER BY ID DESC LIMIT 6";
   $product = $db->fetchsql($sql);
+  $category = $db->fetchAll('category');
 
 ?>
   <!-- Slider -->
@@ -53,52 +54,17 @@
   <div class="homepage-size">
     <div class="category">
       <div class="browse-title">Danh Mục Sản Phẩm</div>
-      <div class="category-brief">From Cars to Cameras, Properties to Pets, Mobile phones to Motorcycles, Treadmills to
-        Textbooks, Watches to Washing machines, Jobs and many more...</div>
+      <div class="category-brief">Mọi thứ đều có ở đây.</div>
 
 
       <div class="category-items">
+        <?php foreach ($category as $item): ?>
         <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
           data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Cars" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_cars_grey.svg" class="svg">
-          <div>Xe Hơi</div>
+          <img src="<?php echo uploads() ?>category/<?php echo $item['icon'] ?>">
+          <div><?php echo $item['name']  ?></div>
         </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Electronics" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_electronics_grey.svg" class="svg">
-          <div>Điện Tử</div>
-        </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Services" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_service_grey.svg" class="svg">
-          <div>Dịch Vụ</div>
-        </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Sports and Hobbies" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_sports_grey.svg" class="svg">
-          <div>Thể Thao &amp; Sở Thích</div>
-        </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Women's Collections" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_women_grey.svg" class="svg">
-          <div>Thời Trang Nữ</div>
-        </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Pets" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_pets_grey.svg" class="svg">
-          <div>Thú Nuôi</div>
-        </a>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Games and Consoles" data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_games_grey.svg" class="svg">
-          <div>Thiết Bị Game</div>
-        </a>
-        <a href="#" data-toggle="modal" data-target="#otherCatModal" class="trackable" data-event_type="link"
-          data-event_name="Browse by Category (Homepage 2017)" data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::See other 52 categories"
-          data-click_type="N">
-          <img src="<?php echo base_url() ?>public/frontend/image/category-/cat_others_grey.svg" class="svg">
-          <div>Chuyên Mục Khác</div>
-        </a>
+         <?php endforeach ?>
       </div>
     </div>
   </div>
@@ -107,7 +73,11 @@
   <!-- Deal For You -->
 
   <div class="container homepage-size">
-    <h4>Dành Riêng Cho Bạn</h4>
+    <div class="homepage-size">
+    <div class="category">
+      <div class="browse-title">Sản phẩm mới nhất</div>
+    </div>
+  </div>
     <div class="row">
       <?php foreach ($product as $item): ?>
         <div class="col-lg-2 portfolio-item">
@@ -131,13 +101,17 @@
 
 
   <!-- Marketing Icons Section -->
-
+<div class="homepage-size">
+    <div class="category">
+      <div class="browse-title">Vì sao nên trao đổi sản phẩm?</div>
+    </div>
+  </div>
   <div class="row homepage-size">
     <div class="col-lg-4 mb-4">
       <div class="card h-100">
         <h4 class="card-header">Tiết kiệm</h4>
         <div class="card-body">
-          <p class="card-text">Bạn có thể tiết kiệm 1 khoảng lớn tiền mà bạn đã đổi, thay vì phải mua 1
+          <p class="card-text">Bạn có thể tiết kiệm 1 khoản lớn tiền mà bạn đã đổi, thay vì phải mua 1
             cái mới hoàn toàn.</p>
         </div>
         <div class="card-footer">
@@ -146,7 +120,7 @@
     </div>
     <div class="col-lg-4 mb-4">
       <div class="card h-100">
-        <h4 class="card-header">Sạch</h4>
+        <h4 class="card-header">Bảo vệ môi trường</h4>
         <div class="card-body">
           <p class="card-text">Hạn chế rác thải, cho cuộc sống thêm phần xanh.</p>
         </div>
@@ -159,7 +133,7 @@
       <div class="card h-100">
         <h4 class="card-header">Giao lưu</h4>
         <div class="card-body">
-          <p class="card-text">Gặp gỡ thêm nhiều người cùng sở thích, thêm bạn thêm vui.</p>
+          <p class="card-text">Gặp gỡ thêm nhiều người có cùng sở thích, thêm bạn thêm vui.</p>
         </div>
         <div class="card-footer">
           <!--a href="#" class="btn btn-primary">Learn More</a-->

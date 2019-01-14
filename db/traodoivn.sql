@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 13, 2019 at 03:24 PM
+-- Generation Time: Jan 14, 2019 at 10:41 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `traodoivn`
 --
-CREATE DATABASE IF NOT EXISTS `traodoivn` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `traodoivn`;
 
 -- --------------------------------------------------------
 
@@ -66,19 +64,21 @@ CREATE TABLE IF NOT EXISTS `category` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `icon`, `home`, `status`, `created_at`, `updated_at`) VALUES
-(19, 'Đồ gia dụng', 'do-gia-dung', NULL, 0, 1, '2019-01-13 12:31:27', '2019-01-13 12:31:27'),
-(3, 'Xe cộ', 'xe-co', NULL, 0, 1, '2019-01-11 09:17:25', '2019-01-11 09:17:25'),
-(13, 'Dịch vụ', 'dich-vu', NULL, 0, 1, '2019-01-12 08:43:33', '2019-01-12 08:43:33'),
-(14, 'Báo chí', 'bao-chi', NULL, 0, 1, '2019-01-12 08:43:48', '2019-01-12 08:43:48'),
-(17, 'Thời trang', 'thoi-trang', NULL, 0, 1, '2019-01-13 12:31:11', '2019-01-13 12:31:11'),
-(18, 'Thú cưng', 'thu-cung', NULL, 0, 1, '2019-01-13 12:31:21', '2019-01-13 12:31:21');
+(24, 'Điện tử', 'dien-tu', 'iconfinder_smartphone_2261328.png', 0, 1, '2019-01-14 09:26:31', '2019-01-14 09:26:31'),
+(21, 'Thú cưng', 'thu-cung', 'iconfinder_12_1490190.png', 0, 1, '2019-01-14 09:15:04', '2019-01-14 09:25:02'),
+(23, 'Thời trang', 'thoi-trang', 'iconfinder_shirt_1845807.png', 0, 1, '2019-01-14 09:26:14', '2019-01-14 10:19:45'),
+(22, 'Thể thao và Sở thích', 'the-thao-va-so-thich', 'iconfinder_02_Soccer_300768.png', 0, 1, '2019-01-14 09:26:00', '2019-01-14 09:26:00'),
+(25, 'Dịch vụ', 'dich-vu', 'iconfinder_1_-_Customer_Service_2102045.png', 0, 1, '2019-01-14 09:26:48', '2019-01-14 09:26:48'),
+(26, 'Gaming', 'gaming', 'iconfinder_videogame_icons-07_611914.png', 0, 1, '2019-01-14 09:27:05', '2019-01-14 09:27:05'),
+(27, 'Xe cộ', 'xe-co', 'iconfinder_BT_c3front_905665.png', 0, 1, '2019-01-14 09:27:19', '2019-01-14 09:27:19'),
+(28, 'Khác', 'khac', 'iconfinder_Three_dots_2202238.png', 0, 1, '2019-01-14 09:27:29', '2019-01-14 09:27:29');
 
 -- --------------------------------------------------------
 
@@ -117,24 +117,46 @@ CREATE TABLE IF NOT EXISTS `product` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `thumbnail`, `category_id`, `description`, `featured`, `created_at`, `updated_at`) VALUES
-(2, 'Xe bọc thép cực mạnh', '22549662_1494231357291903_5506341504538520390_n.jpg', 3, 'Cần trao đổi với các loại xe hạng nặng khác hoặc bán (có thể thương lượng).', 0, '2019-01-12 13:54:01', '2019-01-13 14:52:19'),
-(3, 'Yeri', '0000048138_001_20180813090058037.jpeg', 13, 'Idol đến từ Red Velvet, cần đổi idol khác', 0, '2019-01-13 03:22:36', '2019-01-13 14:52:54'),
-(4, 'Cục Airdrop', '1502049534_preview_loot.png', 13, 'Muốn đổi cục Airdrop khác có M14 EBR', 0, '2019-01-13 03:28:02', '2019-01-13 14:53:26'),
-(5, 'THANOS YEEZY', 'DcIMYxTXcAAhQy_.jpg', 17, 'THANOS YEEZY', 0, '2019-01-13 03:28:48', '2019-01-13 14:53:38'),
-(6, 'Giáp 3', 'military_vest.png', 13, 'Đổi giáp 3 lấy nón 3', 0, '2019-01-13 08:10:34', '2019-01-13 14:53:59'),
-(7, 'Gà mái biết bơi', 'DoD8dzTUUAE81sP.jpg', 18, 'Cần đổi sang con vật khác biết bay', 0, '2019-01-13 14:54:35', '2019-01-13 14:54:35'),
-(8, 'M67 Frag Grenade', 'pubg-grenade-tips.jpg', 19, 'Cần trade ra HE Grenade, có thương lượng', 0, '2019-01-13 14:55:51', '2019-01-13 14:55:51'),
-(9, 'Nerf Rival Blaster', '511BoKyjYXL._SL500_AC_SS350_.jpg', 19, 'Cần trade ra các loại gel blaster khác hoặc các loại súng Nerf khác.', 0, '2019-01-13 14:56:58', '2019-01-13 14:56:58'),
-(10, 'Figure Hanzo', 'Hot-Game-OW-font-b-Shimada-b-font-font-b-Hanzo-b-font-PVC-Figure-Collectible_470497763873440.jpg', 19, 'Muốn đổi ra các loại figure cùng giá (có thể là gundam model kit).', 0, '2019-01-13 14:58:29', '2019-01-13 14:58:29'),
-(11, 'Mèo trắng', '10857761_409179169255552_4357618676049897300_n.jpg', 18, 'Cần đổi sang 1 con vật nuôi khác', 0, '2019-01-13 15:00:41', '2019-01-13 15:00:41'),
-(12, 'Xe tải 2 men 1 truck', 'two-men-and-a-truck-crime-25488384.png', 3, 'Đổi sang dòng xe tải khác như Volvo', 0, '2019-01-13 15:01:46', '2019-01-13 15:01:46');
+(21, 'Iphone X ', 'iphonex.jpg', 24, 'Cần đổi sang các dòng Samsung hoặc Sony, có thương lượng bù trừ', 0, '2019-01-14 09:56:51', '2019-01-14 09:56:51'),
+(20, 'Tai nghe gaming HyperX Revolver', 'hyperx-headset-revolver-s-2-zm-lg.jpg', 26, 'Qua sử dụng 90%, muốn đổi sang dòng tai nghe Logitech hoặc Steelseries', 0, '2019-01-14 09:55:59', '2019-01-14 09:55:59'),
+(19, 'Áo thun nam còn mới', 'lacoste-t-shirt.jpg', 23, 'Mới mặc 1 lần, muốn đem đổi vì không dùng đến, có thương lượng', 0, '2019-01-14 09:54:23', '2019-01-14 09:54:23'),
+(15, 'Filco Majestouch TKL', 'filco-masjectouch-2-tkl-yellow.jpg', 24, 'Còn bảo hành đến tháng 10/2021, muốn giao lưu với các dòng Leopold', 0, '2019-01-14 09:50:33', '2019-01-14 09:50:33'),
+(16, 'Keycaps CSGO xuyên LED', 'csgo-keycap-set.jpg', 26, 'Còn thừa set này muốn đem bán hoặc trao đổi với các set khác ', 0, '2019-01-14 09:51:19', '2019-01-14 09:51:19'),
+(17, 'Honda CB 400', 'honda-cb-400.jpg', 27, 'Tình trạng như ảnh, liên hệ để biết thêm chi tiết', 0, '2019-01-14 09:52:01', '2019-01-14 09:52:01'),
+(18, 'Mô hình BMW M3 1:12 Otto', 'otto-112-bmw-m3.jpg', 22, 'Còn mới 90%, xước 1 chỗ nhỏ không đáng kể, muốn giao lưu với các model xe máy hoặc các dòng xe SUV', 0, '2019-01-14 09:53:12', '2019-01-14 09:53:12'),
+(13, 'Mèo cần đem cho', 'cats.png', 21, 'Cần đem cho mèo do không còn khả năng nuôi, liên hệ', 0, '2019-01-14 09:48:28', '2019-01-14 09:48:28'),
+(14, 'Tượng Figma Reaper Overwatch', 'figma-reaper.jpg', 22, 'Mua được 3 tháng, còn mới, muốn đổi sang Figma khác cùng dòng game', 0, '2019-01-14 09:49:29', '2019-01-14 09:49:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `report`
+--
+
+DROP TABLE IF EXISTS `report`;
+CREATE TABLE IF NOT EXISTS `report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT NULL,
+  `user_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `report`
+--
+
+INSERT INTO `report` (`id`, `product_id`, `user_id`, `description`, `created_at`, `updated_at`) VALUES
+(4, 11, '1', NULL, '2019-01-14 08:26:33', '2019-01-14 08:26:33');
 
 -- --------------------------------------------------------
 

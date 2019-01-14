@@ -1,6 +1,6 @@
 <?php 
     require_once __DIR__. "/../../autoload/autoload.php";
-    $open = "category";
+    $open = "report";
     if (isset($_GET['page']))
     {
         $p = $_GET['page'];
@@ -9,13 +9,13 @@
     {
         $p = 1;
     }
-    $category = $db->fetchAll("category");
-    $sql = "SELECT category.* from category";
-    $category = $db->fetchJone("category",$sql,$p,10,true);
-    if(isset($category['page']))
+    $report = $db->fetchAll("report");
+    $sql = "SELECT report.* from report";
+    $report = $db->fetchJone("report",$sql,$p,10,true);
+    if(isset($report['page']))
     {
-        $sotrang = $category['page'];
-        unset($category['page']);
+        $sotrang = $report['page'];
+        unset($report['page']);
     }
  ?>
 <?php require_once __DIR__. "/../../layouts/header.php"; ?>
@@ -28,19 +28,17 @@
                                 <li class="breadcrumb-item">
                                     <a href="index.php">Dashboard</a>
                                 </li>
-                                <li class="breadcrumb-item active">Các danh mục (Category)</li>
+                                <li class="breadcrumb-item active">Các báo cáo (Report)</li>
                             </ol>
                             <!-- Page Content -->
-                            <h1>Danh sách các danh mục sản phẩm (Category)</h1>
-                            <hr>
-                            <a href="add.php" class="btn btn-info">Thêm mới</a>
+                            <h1>Danh sách các sản phẩm bị báo cáo (Report)</h1>
                             <hr>
                             <div class="clearfix"></div>
                             <?php require_once __DIR__. "/../../../partials/notifications.php" ?>
                                 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Bảng danh mục
+        Bảng báo cáo
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -59,33 +57,31 @@
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 61px;">ID</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 83px;">Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 49px;">Icon</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Slug</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 83px;">Product</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 49px;">User Reported</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Description</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 64px;">Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">ID</th>
-                                    <th rowspan="1" colspan="1">Name</th>
-                                    <th rowspan="1" colspan="1">Icon</th>
-                                    <th rowspan="1" colspan="1">Slug</th>
+                                    <th rowspan="1" colspan="1">Product</th>
+                                    <th rowspan="1" colspan="1">User Reported</th>
+                                    <th rowspan="1" colspan="1">Description</th>
                                     <th rowspan="1" colspan="1">Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php foreach ($category as $item): ?>
+                                <?php foreach ($report as $item): ?>
                                 <tr role="row" class="odd">
                                     <td class="sorting_1"><?php echo $item['id']  ?></td>
-                                    <td><?php echo $item['name']  ?></td>
+                                    <td><?php echo $item['product_id']  ?></td>
+                                    <td><?php echo $item['user_id']  ?></td>
+                                    <td><?php echo $item['description']  ?></td>
                                     <td>
-                                        <img src="<?php echo uploads() ?>category/<?php echo $item['icon'] ?>" width="80px" height="80px">
-                                    </td>
-                                    <td><?php echo $item['slug']  ?></td>
-                                    <td>
-                                        <a class="btn btn-xs btn-success" href="edit.php?id=<?php echo $item['id'] ?>">Sửa</a>
-                                        <a class="btn btn-xs btn-danger" href="delete.php?id=<?php echo $item['id'] ?>">Xóa</a>
+                                        <a class="btn btn-xs btn-success" href="delete_product.php?id=<?php echo $item['product_id'] ?>">Xóa sản phẩm</a>
+                                        <a class="btn btn-xs btn-danger" href="ignore.php?id=<?php echo $item['id'] ?>">Bỏ qua</a>
                                     </td>
                                 </tr>
                                 <?php endforeach ?>

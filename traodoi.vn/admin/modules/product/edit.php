@@ -59,7 +59,7 @@
                 $_SESSION['error'] = "Lỗi xảy ra khi cập nhật sản phẩm. Vui lòng thử lại.";
                 redirectAdmin('product');
             }
-            }
+        }
 
         }
     

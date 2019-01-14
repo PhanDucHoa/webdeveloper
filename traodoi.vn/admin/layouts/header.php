@@ -79,7 +79,7 @@
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo modules("admin") ?>">
+                    <a class="nav-link" href="<?php echo modules("") ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Bảng điều khiển</span>
                     </a>
