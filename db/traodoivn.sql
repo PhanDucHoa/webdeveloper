@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 15, 2019 at 05:57 AM
+-- Generation Time: Jan 15, 2019 at 02:58 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `offer` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `offer`
@@ -103,7 +103,17 @@ CREATE TABLE IF NOT EXISTS `offer` (
 
 INSERT INTO `offer` (`id`, `product_id`, `user_id`, `view`, `created_at`, `updated_at`) VALUES
 (2, 29, 3, NULL, '2019-01-15 04:02:21', '2019-01-15 04:02:21'),
-(3, 30, 3, NULL, '2019-01-15 04:14:23', '2019-01-15 04:14:23');
+(3, 30, 3, NULL, '2019-01-15 04:14:23', '2019-01-15 04:14:23'),
+(4, 31, 5, NULL, '2019-01-15 10:28:54', '2019-01-15 10:28:54'),
+(5, 32, 5, NULL, '2019-01-15 10:32:12', '2019-01-15 10:32:12'),
+(6, 33, 5, NULL, '2019-01-15 10:33:21', '2019-01-15 10:33:21'),
+(7, 34, 6, NULL, '2019-01-15 10:34:47', '2019-01-15 10:34:47'),
+(8, 35, 7, NULL, '2019-01-15 10:36:33', '2019-01-15 10:36:33'),
+(9, 36, 7, NULL, '2019-01-15 10:37:41', '2019-01-15 10:37:41'),
+(10, 37, 3, NULL, '2019-01-15 10:39:05', '2019-01-15 10:39:05'),
+(11, 38, 6, NULL, '2019-01-15 10:43:48', '2019-01-15 10:43:48'),
+(12, 39, 6, NULL, '2019-01-15 10:44:56', '2019-01-15 10:44:56'),
+(13, 40, 6, NULL, '2019-01-15 10:47:09', '2019-01-15 10:47:09');
 
 -- --------------------------------------------------------
 
@@ -122,24 +132,24 @@ CREATE TABLE IF NOT EXISTS `product` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `thumbnail`, `category_id`, `description`, `featured`, `created_at`, `updated_at`) VALUES
-(21, 'Iphone X ', 'iphonex.jpg', 24, 'Cần đổi sang các dòng Samsung hoặc Sony, có thương lượng bù trừ', 0, '2019-01-14 09:56:51', '2019-01-14 09:56:51'),
-(20, 'Tai nghe gaming HyperX Revolver', 'hyperx-headset-revolver-s-2-zm-lg.jpg', 26, 'Qua sử dụng 90%, muốn đổi sang dòng tai nghe Logitech hoặc Steelseries', 0, '2019-01-14 09:55:59', '2019-01-14 09:55:59'),
-(19, 'Áo thun nam còn mới', 'lacoste-t-shirt.jpg', 23, 'Mới mặc 1 lần, muốn đem đổi vì không dùng đến, có thương lượng', 0, '2019-01-14 09:54:23', '2019-01-14 09:54:23'),
-(15, 'Filco Majestouch TKL', 'filco-masjectouch-2-tkl-yellow.jpg', 24, 'Còn bảo hành đến tháng 10/2021, muốn giao lưu với các dòng Leopold', 0, '2019-01-14 09:50:33', '2019-01-14 09:50:33'),
-(16, 'Keycaps CSGO xuyên LED', 'csgo-keycap-set.jpg', 26, 'Còn thừa set này muốn đem bán hoặc trao đổi với các set khác ', 0, '2019-01-14 09:51:19', '2019-01-14 09:51:19'),
-(17, 'Honda CB 400', 'honda-cb-400.jpg', 27, 'Tình trạng như ảnh, liên hệ để biết thêm chi tiết', 0, '2019-01-14 09:52:01', '2019-01-14 09:52:01'),
-(18, 'Mô hình BMW M3 1:12 Otto', 'otto-112-bmw-m3.jpg', 22, 'Còn mới 90%, xước 1 chỗ nhỏ không đáng kể, muốn giao lưu với các model xe máy hoặc các dòng xe SUV', 0, '2019-01-14 09:53:12', '2019-01-14 09:53:12'),
-(13, 'Mèo cần đem cho', 'cats.png', 21, 'Cần đem cho mèo do không còn khả năng nuôi, liên hệ', 0, '2019-01-14 09:48:28', '2019-01-14 09:48:28'),
-(14, 'Tượng Figma Reaper Overwatch', 'figma-reaper.jpg', 22, 'Mua được 3 tháng, còn mới, muốn đổi sang Figma khác cùng dòng game', 0, '2019-01-14 09:49:29', '2019-01-14 09:49:29'),
-(22, 'Máy chơi game PS4', 'sony-playstation-4-pro.jpg', 26, 'Cần trao đổi với các mặt hàng điện tử khác như linh kiện PC', 0, '2019-01-15 03:25:11', '2019-01-15 03:25:11'),
-(30, 'Váy', 'dress.jpeg', 23, 'Váy còn mới chỉ sử dụng 2 lần', 0, '2019-01-15 04:14:23', '2019-01-15 04:14:23');
+(39, 'Mèo cần đem cho', 'cats.png', 21, 'Hiện tại nhà mình đang dư mèo, do không thể nuôi hết nên cần đem cho, liên hệ qua sđt: 685416873334', 0, '2019-01-15 10:44:56', '2019-01-15 10:44:56'),
+(37, 'Máy chơi game PS4', 'sony-playstation-4-pro.jpg', 26, 'Còn mới 90%, đã hết bảo hành, muốn trade qua các loại phụ kiện gaming khác.', 0, '2019-01-15 10:39:05', '2019-01-15 10:39:05'),
+(38, 'Tai nghe gaming HyperX Revolver', 'hyperx-headset-revolver-s-2-zm-lg.jpg', 26, 'Cần đổi sang các dòng tai nghe khác, giao lưu với Steelseries, Logitech, ...', 0, '2019-01-15 10:43:48', '2019-01-15 10:43:48'),
+(31, 'Honda CB 400', 'honda-cb-400.jpg', 27, 'Xe máy phân khối lớn, sử dụng được 10 tháng, muốn giao lưu với các dòng xe khác.', 0, '2019-01-15 10:28:54', '2019-01-15 10:28:54'),
+(32, 'Nerf Rival Blaster', 'nerf-rival-mxv-1200.jpeg', 22, 'Còn mới 95%, muốn trade qua các dòng Nerf khác hoặc các loại gel blaster.', 0, '2019-01-15 10:32:12', '2019-01-15 10:32:12'),
+(33, 'Zowie EC2-B bản CS:GO', 'zowie-ec2b.jpg', 26, 'Mới sử dụng 2 tháng, cầm không vừa tay nên muốn đổi chuột có form balanced.', 0, '2019-01-15 10:33:21', '2019-01-15 10:33:21'),
+(34, 'Filco Majestouch TKL', 'filco-masjectouch-2-tkl-yellow.jpg', 24, 'Được tặng nên còn thừa. Muốn đổi qua tai nghe hoặc linh kiện PC cùng giá. Còn nguyên bảo hành ở H2 Gaming.', 0, '2019-01-15 10:34:47', '2019-01-15 10:34:47'),
+(35, 'Áo thun nam còn mới', 'lacoste-t-shirt.jpg', 23, 'Nhà còn dư áo nên đem đổi, miễn là cùng giá trị.', 0, '2019-01-15 10:36:33', '2019-01-15 10:36:33'),
+(36, 'Mô hình BMW M3 1:12 Otto', 'otto-112-bmw-m3.jpg', 22, 'Còn mới 95%, xước 1 chỗ nhỏ gần bánh trước không đáng kể, muốn trade sang các model xe SUV.', 0, '2019-01-15 10:37:41', '2019-01-15 10:37:41'),
+(30, 'Váy', 'dress.jpeg', 23, 'Váy còn mới chỉ sử dụng 2 lần', 0, '2019-01-15 04:14:23', '2019-01-15 04:14:23'),
+(40, 'Figma Reaper', 'figma-reaper.jpg', 22, 'Còn mới, bảo quản kĩ vì chỉ cất hộp. Cần đổi với các figma khác tình trạng còn đẹp.', 0, '2019-01-15 10:47:09', '2019-01-15 10:47:09');
 
 -- --------------------------------------------------------
 
@@ -185,14 +195,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone`, `address`, `password`, `province`, `status`, `rating`, `created_at`, `updated_at`) VALUES
-(3, 'kaito', 'pthuy7448@gmail.com', '123', 'Đồng Khởi, Biên Hòa', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-14 14:30:54', '2019-01-14 14:30:54');
+(3, 'kaito', 'pthuy7448@gmail.com', '123', 'Đồng Khởi, Biên Hòa', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-14 14:30:54', '2019-01-14 14:30:54'),
+(4, 'Thái Hoàng', 'pthuy74@gmail.com', '123456789', '245, Ấp 3, xã An Hòa', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-15 10:25:11', '2019-01-15 10:25:11'),
+(5, 'Võ Hiển', 'hien@gmail.com', '456789123', 'Dĩ An, Bình Dương', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-15 10:26:00', '2019-01-15 10:26:00'),
+(6, 'Thành Trung', 'ttrung@gmail.com', '0461235664', 'Biên Hòa, Đồng Nai', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-15 10:26:53', '2019-01-15 10:26:53'),
+(7, 'Công Lý', 'congly@gmail.com', '445324698423', 'Thanh Chương, Nghệ An', '202cb962ac59075b964b07152d234b70', NULL, 1, NULL, '2019-01-15 10:27:54', '2019-01-15 10:27:54');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

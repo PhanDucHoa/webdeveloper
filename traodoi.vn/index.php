@@ -60,7 +60,7 @@
       <div class="category-items">
         <?php foreach ($category as $item): ?>
         <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
-          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::Cars" data-click_type="N">
+          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)" data-click_type="N">
           <img src="<?php echo uploads() ?>category/<?php echo $item['icon'] ?>">
           <div><?php echo $item['name']  ?></div>
         </a>
@@ -82,11 +82,11 @@
       <?php foreach ($product as $item): ?>
         <div class="col-lg-2 portfolio-item">
         <div class="card h-100">
-          <a href="chi-tiet-san-pham.php?id=<?php echo $item['id'] ?>"><img class="card-img-top" src="<?php echo uploads() ?>product/<?php echo $item['thumbnail'] ?>"
+          <a href="chi-tiet-offer.php?id=<?php echo $item['id'] ?>"><img class="card-img-top" src="<?php echo uploads() ?>product/<?php echo $item['thumbnail'] ?>"
               alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="chi-tiet-san-pham.php?id=<?php echo $item['id'] ?>"><?php echo $item['name']  ?></a>
+              <a href="chi-tiet-offer.php?id=<?php echo $item['id'] ?>"><?php echo $item['name']  ?></a>
             </h4>
             <p class="card-text"><?php echo $item['description']  ?></p>
           </div>
@@ -141,8 +141,6 @@
       </div>
     </div>
   </div>
-
-  <hr>
 
 
   <!-- Footer -->

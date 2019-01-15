@@ -24,6 +24,8 @@ if (isset($_SESSION['name_id']))
   <!-- Custom CSS -->
   <link href="<?php echo base_url() ?>public/frontend/css/homepage1.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>public/frontend/css/custom.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>public/frontend/css/modern-business.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>public/frontend/css/portfolio-item.css" rel="stylesheet">
 
 
 </head>
@@ -43,7 +45,7 @@ if (isset($_SESSION['name_id']))
       </div>
       <div class="header-menus">
         <div class="header-menu">
-          <a href="" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)" data-xtn2="91"
+          <a href="tim-kiem.php" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)" data-xtn2="91"
             data-page_name="Header (Homepage 2018)::Tim Mon Hang" data-click_type="A">Tìm Hàng</a>
         </div>
 
@@ -78,3 +80,4 @@ if (isset($_SESSION['name_id']))
     </div>
 
   </div><br>
+  <hr>
