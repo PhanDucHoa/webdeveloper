@@ -163,10 +163,10 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
     text-decoration: none;
     color: #fff;
     margin-top: 4px;
-    background: -webkit-linear-gradient(left top,#5343E8,#9654DD);
-    background: -o-linear-gradient(left top,#5343E8,#9654DD);
-    background: -moz-linear-gradient(left top,#5343E8,#9654DD);
-    background: linear-gradient(left top,#5343E8,#9654DD);
+    background: -webkit-linear-gradient(left top,#fc9807,#FFBE07);
+    background: -o-linear-gradient(left top,#fc9807,#FFBE07);
+    background: -moz-linear-gradient(left top,#fc9807,#FFBE07);
+    background: linear-gradient(left top,#fc9807,#FFBE07);
 }
 .img_gallery {
     max-height: 108px;
