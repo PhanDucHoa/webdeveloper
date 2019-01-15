@@ -43,7 +43,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
       text-decoration: underline;
 }
 .none:hover{
-      color: blue;
+      color: #fc9807;
       background-color: #fff;
       text-transform: uppercase;
 }
@@ -57,7 +57,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
 }
 .featured_ads_head_title {
     width: 150px;
-    border-bottom: 4px solid #5343E8;
+    border-bottom: 4px solid #fc9807;
     padding: 5px 0 7px;
 }
 .gallery_item {
