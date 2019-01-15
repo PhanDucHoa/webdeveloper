@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 14, 2019 at 03:28 PM
+-- Generation Time: Jan 15, 2019 at 05:57 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`, `rank`, `created_at`, `updated_at`) VALUES
-(1, 'kaito', 'pthuy7448@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2019-01-13 13:26:30', '2019-01-13 14:03:53');
+(1, 'kaito', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2019-01-13 13:26:30', '2019-01-15 04:39:11');
 
 -- --------------------------------------------------------
 
@@ -92,13 +92,18 @@ CREATE TABLE IF NOT EXISTS `offer` (
   `product_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `view` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci,
-  `province` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `wanted_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `offer`
+--
+
+INSERT INTO `offer` (`id`, `product_id`, `user_id`, `view`, `created_at`, `updated_at`) VALUES
+(2, 29, 3, NULL, '2019-01-15 04:02:21', '2019-01-15 04:02:21'),
+(3, 30, 3, NULL, '2019-01-15 04:14:23', '2019-01-15 04:14:23');
 
 -- --------------------------------------------------------
 
@@ -117,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `product`
@@ -132,7 +137,9 @@ INSERT INTO `product` (`id`, `name`, `thumbnail`, `category_id`, `description`, 
 (17, 'Honda CB 400', 'honda-cb-400.jpg', 27, 'Tình trạng như ảnh, liên hệ để biết thêm chi tiết', 0, '2019-01-14 09:52:01', '2019-01-14 09:52:01'),
 (18, 'Mô hình BMW M3 1:12 Otto', 'otto-112-bmw-m3.jpg', 22, 'Còn mới 90%, xước 1 chỗ nhỏ không đáng kể, muốn giao lưu với các model xe máy hoặc các dòng xe SUV', 0, '2019-01-14 09:53:12', '2019-01-14 09:53:12'),
 (13, 'Mèo cần đem cho', 'cats.png', 21, 'Cần đem cho mèo do không còn khả năng nuôi, liên hệ', 0, '2019-01-14 09:48:28', '2019-01-14 09:48:28'),
-(14, 'Tượng Figma Reaper Overwatch', 'figma-reaper.jpg', 22, 'Mua được 3 tháng, còn mới, muốn đổi sang Figma khác cùng dòng game', 0, '2019-01-14 09:49:29', '2019-01-14 09:49:29');
+(14, 'Tượng Figma Reaper Overwatch', 'figma-reaper.jpg', 22, 'Mua được 3 tháng, còn mới, muốn đổi sang Figma khác cùng dòng game', 0, '2019-01-14 09:49:29', '2019-01-14 09:49:29'),
+(22, 'Máy chơi game PS4', 'sony-playstation-4-pro.jpg', 26, 'Cần trao đổi với các mặt hàng điện tử khác như linh kiện PC', 0, '2019-01-15 03:25:11', '2019-01-15 03:25:11'),
+(30, 'Váy', 'dress.jpeg', 23, 'Váy còn mới chỉ sử dụng 2 lần', 0, '2019-01-15 04:14:23', '2019-01-15 04:14:23');
 
 -- --------------------------------------------------------
 

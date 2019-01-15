@@ -11,7 +11,7 @@
         $p = 1;
     }
 
-    $sql = "SELECT admin.* from admin";
+    $sql = "SELECT admin.* from admin ORDER BY id DESC";
 
     
     $admin = $db->fetchJone("admin",$sql,$p,10,true);
@@ -29,7 +29,7 @@
                         <div class="container-fluid">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/../index.php">Dashboard</a>
+                                    <a href="/traodoivn/admin/">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active">Quản lý Admin</li>
                             </ol>
@@ -98,7 +98,6 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
                     </div>
                     <div class="col-sm-12 col-md-7">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
@@ -128,10 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                                 </div>
-                            
-                            <p>Quản lý sản phẩm của website bạn tại đây.</p>
                 <!-- /.container-fluid -->
                         </div>
 <?php require_once __DIR__. "/../../layouts/footer.php"; ?>                

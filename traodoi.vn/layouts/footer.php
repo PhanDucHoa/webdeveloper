@@ -3,7 +3,7 @@
       <div class="row row-30">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4">
-            <a class="brand" href="index.html"><img class="brand-logo-light" src="<?php echo base_url() ?>public/frontend/image/logo.jpg" alt="" width="280"
+            <a class="brand" href="index.php"><img class="brand-logo-light" src="<?php echo base_url() ?>public/frontend/image/logo.jpg" alt="" width="280"
                 srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a><br></br>
 
             <p>1doi1.vn là nền tảng trao đổi hàng hóa đầu tiên tại Việt Nam - Cho phép mọi người đăng tin trao đổi

@@ -77,7 +77,7 @@
                         <div class="container-fluid">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/../index.php">Dashboard</a>
+                                    <a href="/traodoivn/admin/">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="<?php echo modules("admin") ?>">Quản lý Admin</a>

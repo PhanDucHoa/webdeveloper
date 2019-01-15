@@ -1,4 +1,10 @@
-<?php require_once __DIR__. "/../autoload/autoload.php"; ?>
+<?php require_once __DIR__. "/../autoload/autoload.php"; 
+$user_id = '';
+if (isset($_SESSION['name_id']))
+{
+  $user_id = $_SESSION['name_id'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +72,7 @@
         <?php endif ;?>
 
         <div class="appWrapper-Header-navItem">
-          <a class="appWrapper-Header-primaryButton" href="https://www.chotot.com/dangtin">Đăng Tin</a>
+          <a class="appWrapper-Header-primaryButton" href="tao-offer.php?id=<?php echo $user_id ?>">Đăng Tin</a>
         </div>
       </div>
     </div>

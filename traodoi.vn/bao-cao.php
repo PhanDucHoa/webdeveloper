@@ -1,78 +1,62 @@
 <?php 
-    require_once __DIR__. "/../../autoload/autoload.php";
-
-
-
+	require_once __DIR__. "/autoload/autoload.php";
+	if (!isset($_SESSION['name_user']))
+	{
+            echo "<script>alert('Bạn cần đăng nhập để có thể gửi báo cáo!');location.href='dang-nhap.php'</script>";
+	}
+ ?>
+ <?php require_once __DIR__. "/layouts/header.php"; ?> 
+ <?php 
+ require_once __DIR__. "/autoload/autoload.php";
+ 	$id = intval(getInput('id'));
     $category = $db->fetchAll("category");
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $data = 
+        $data_product = 
         [
             "name" => postInput('name'),
             "category_id" => postInput('category_id'),
-            "description" => postInput('description')
         ];
+
         $error = [];
-        if (postInput('name') == '')
+        if (postInput('description') == '')
         {
-            $error['name'] = "Bạn cần nhập tên sản phẩm!";
-        }
-        if (postInput('category_id') == '')
-        {
-            $error['category_id'] = "Bạn cần chọn danh mục!";
-        }
-        if (! isset ($_FILES['thumbnail']))
-        {
-            $error['thumbnail'] = "Bạn cần đăng ảnh sản phẩm!";     
+            $error['name'] = "Bạn cần nhập nội dung báo cáo!";
         }
         if (empty($error))
         {
-            if (isset($_FILES['thumbnail']))
-            {
-                $file_name = $_FILES['thumbnail']['name'];
-                $file_tmp = $_FILES['thumbnail']['tmp_name'];
-                $file_type = $_FILES['thumbnail']['type'];
-                $file_error = $_FILES['thumbnail']['error'];
-                if ($file_error == 0)
-                {
-                    $part = ROOT."product/";
-                    $data['thumbnail'] = $file_name;
-                }
-            }
-            $id_insert = $db->insert("product",$data);
+            $id_offer_insert = $db->insert("report",$data_report);
             if ($id_insert)
             {
-                move_uploaded_file($file_tmp, $part.$file_name);
-                $_SESSION['success'] = "Thêm mới thành công.";
-                redirectAdmin('product');
+                $id_product = $db->fetchOne("product", "name = '".$data_product['name']."'");
+                $data_report =
+                [
+                	"user_id" => $id,
+                	"product_id" => $id_product['id']
+
+                ];
+                $id_report_insert = $db->insert("report",$data_report);
+                $_SESSION['success'] = "Báo cáo sản phẩm thành công.";
+                redirect('index.php');
             }
             else
             {
-                $_SESSION['error'] = "Lỗi xảy ra khi thêm mới sản phẩm. Vui lòng thử lại.";
-                redirectAdmin('product');
+                $_SESSION['error'] = "Lỗi xảy ra khi báo cáo sản phẩm. Vui lòng thử lại.";
+                redirect('index.php');
             }
 
 
         }
     }
  ?>
-<?php require_once __DIR__. "/../../layouts/header.php"; ?>
                     <!-- Nội dung bên trong website-->
                     <!-- Breadcrumbs-->
                      <div id="content-wrapper">
 
-                        <div class="container-fluid">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="/traodoivn/admin/">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo modules("product") ?>">Các sản phẩm (Product)</a>
-                                </li>
-                                <li class="breadcrumb-item active">Thêm mới</li>
-                            </ol>
+                        <div class="container-fluid col-md-8">
                             <!-- Page Content -->
-                            <h1>Thêm mới sản phẩm</h1>
+                            <h1>Báo cáo sản phẩm</h1>
+                            <p>Cung cấp thông tin chính xác để admin dễ dàng xử lý.</p>
                             <hr>
                             <div class="clearfix"></div>
                             <?php if (isset($_SESSION['error'])) :?>
@@ -117,7 +101,8 @@
                                     <p class="text-danger"> <?php echo $error['description'] ?> </p>
                                 <?php endif ?>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="submit" class="btn btn-primary">Đăng tải</button>
                             </form>
-                        </div>
-<?php require_once __DIR__. "/../../layouts/footer.php"; ?>                
+                        </div>               
+
+ <?php require_once __DIR__. "/layouts/footer.php"; ?> 

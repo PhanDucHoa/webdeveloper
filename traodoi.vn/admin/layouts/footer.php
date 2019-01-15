@@ -1,7 +1,7 @@
 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright © TraoDoi.VN 2018</span>
+                            <span>Copyright © 1DOI1.VN 2018</span>
                         </div>
                     </div>
                 </footer>

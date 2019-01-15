@@ -1,4 +1,4 @@
-<?php require_once __DIR__. "/../layouts/header.php"; ?>
+<?php require_once __DIR__. "/layouts/header.php"; ?>
                     <!-- Nội dung bên trong website-->
                     <!-- Breadcrumbs-->
                      <div id="content-wrapper">
@@ -16,4 +16,4 @@
                             <p>Quản lý website của bạn tại đây.</p>
                 <!-- /.container-fluid -->
                         </div>
-<?php require_once __DIR__. "/../layouts/footer.php"; ?>                
+<?php require_once __DIR__. "/layouts/footer.php"; ?>                
