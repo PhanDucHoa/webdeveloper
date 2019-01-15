@@ -52,7 +52,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
 }
 
 #featured-ads-container {
-    min-width: 315px;
+    max-width: 315px;
 }
 .list_ads_container .gallery_container {
     width: 300px;
@@ -62,6 +62,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
     width: 150px;
     border-bottom: 4px solid #fc9807;
     padding: 5px 0 7px;
+    max-width: 80%;
 }
 .gallery_item {
     background-color: #fff;
@@ -70,6 +71,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: left;
+    max-width: 100%;
 }
 .font_style_feature_ad {
     font-family: Roboto,helvetica!important;
@@ -125,6 +127,7 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
 .gallery_thumb_container {
     display: inline-block;
     border: 1px solid #e1e1e1;
+    max-width: 100%;
 }
 .gallery .gallery_thumb {
     width: 147px;
@@ -132,6 +135,8 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
     height: 110px;
     vertical-align: middle;
     position: relative;
+    max-width: 100%;
+    max-height: 100%;
 }
 .gallery_thumb .value {
     background: url(/img/photo_xhdpi.png) no-repeat;
@@ -210,14 +215,14 @@ a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoratio
       position: relative;
 }
 .hot1{
-      max-width: 40%;
+    max-width: 22%;
     margin-left: 20px;
     float: left;
     display: block;
     position: relative;
 }
 .hot2{
-      max-width: 40%;
+    max-width: 22%;
     margin-right: 5px;
     float: right;
     display: block;
