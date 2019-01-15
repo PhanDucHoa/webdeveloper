@@ -5,7 +5,7 @@ body{font-family:Noto Sans,Helvetica;font-size:15px;color:#4d4d4d;padding-top:0p
 a,span,area,button,input{outline:0!important;color:inherit}
 a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoration:underline;color:inherit}
 .category-items{display:flex;justify-content:space-between}
-.category-items>a{width:99px;height:115px;border:1px solid #e6e6e6;border-radius:2px;text-align:center;background-color:#fafafa}
+.category-items>a{width:99px;height:115px;border:1px solid #e6e6e6;border-radius:2px;text-align:center;background-color:#fafafa;padding-top: 16px;}
 .category-items>a:hover{border:1px solid #AA16FF;background-color:#fff}
 .category-items>a>img{margin:auto;width:52px;height:52px}
 .category-items>a>div{font-size:11px;color:#4d4d4d;padding:10px 5px;line-height:1}
