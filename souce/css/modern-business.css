@@ -46,12 +46,12 @@ body {
     border-bottom-left-radius: calc(.50rem - 1px);
     border-bottom-right-radius: calc(.50rem - 1px);
     color: #fff;
-    background: -webkit-linear-gradient(left top,#5343E8,#9654DD);
-    background: -o-linear-gradient(left top,#5343E8,#9654DD);
-    background: -moz-linear-gradient(left top,#5343E8,#9654DD);
-    background: linear-gradient(left top,#5343E8,#9654DD);
+    background: -webkit-linear-gradient(left top,#fc9807,#FFBE07);
+    background: -o-linear-gradient(left top,#fc9807,#FFBE07);
+    background: -moz-linear-gradient(left top,#fc9807,#FFBE07);
+    background: linear-gradient(left top,#fc9807,#FFBE07);
+    border-color: #FF7607;
 }
-
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: 600;}
     
 .card-img-top{  

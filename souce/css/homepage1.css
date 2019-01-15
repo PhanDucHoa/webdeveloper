@@ -1,16 +1,19 @@
 /*!** Begin file: homepage.css ***/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 #homepage-wrap{width:inherit;margin:0 auto}input::-webkit-input-placeholder{color:#9f9f9f!important}input:-moz-placeholder{color:#9f9f9f!important}input::-moz-placeholder{color:#9f9f9f!important}input:-ms-input-placeholder{color:#9f9f9f!important}
-body{font-family:Noto Sans,Helvetica;font-size:15px;color:#4d4d4d}
-a,span,area,button,input{outline:0!important;text-decoration:none;color:inherit}
-a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoration:none;color:inherit}
+body{font-family:Noto Sans,Helvetica;font-size:15px;color:#4d4d4d;padding-top:0px;}
+a,span,area,button,input{outline:0!important;color:inherit}
+a:hover,button:hover,input:hover,a:focus,button:focus,input:focus{text-decoration:underline;color:inherit}
 .category-items{display:flex;justify-content:space-between}
 .category-items>a{width:99px;height:115px;border:1px solid #e6e6e6;border-radius:2px;text-align:center;background-color:#fafafa}
 .category-items>a:hover{border:1px solid #AA16FF;background-color:#fff}
 .category-items>a>img{margin:auto;width:52px;height:52px}
 .category-items>a>div{font-size:11px;color:#4d4d4d;padding:10px 5px;line-height:1}
+.nav-link:hover{text-decoration: underline;}
 
-
+.list-inline-item{
+  color: #fc9807;
+}
 .Search{
       width: 130px;
       box-sizing: border-box;
