@@ -6,16 +6,20 @@
   <!-- meta title -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>1DOI1.VN</title>
 
   <!-- Bootstrap core CSS -->
+  <link href="/home/phanduchoa/Documents/Source/vendor/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
   <!-- Custom CSS -->
   <link href="css/homepage1.css" rel="stylesheet">
+  <link href="css/custom2.css" rel="stylesheet">
+
+
+
+
 
 
 
@@ -143,20 +147,171 @@
           <img src="image/category-/cat_games_grey.svg" class="svg">
           <div>Thiết Bị Game</div>
         </a>
-        <a href="#" data-toggle="modal" data-target="#otherCatModal" class="trackable" data-event_type="link"
-          data-event_name="Browse by Category (Homepage 2017)" data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)::See other 52 categories"
-          data-click_type="N">
-          <img src="image/category-/cat_others_grey.svg" class="svg">
-          <div>Chuyên Mục Khác</div>
-        </a>
+          <a href="#" 
+            data-event_name="Browse by Category (Homepage 2017)">
+            <img src="image/category-/cat_others_grey.svg" id="myBtn" class="svg">
+            <div>Chuyên Mục Khác</div>
+          </a>
+
+          <!--Mới thêm categories vào đây -->
+                          <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <p>Lựa Chọn Chuyên Mục<p> 
+                        <span class="close">&times;</span>
+                      </div>
+                      
+                      
+                      <div class="modal-body">
+                      
+                        <div class="container" class ="all-cat-item-row">
+                          <div class="row">
+                            <div class="col-sm">
+                                  <h5>Xe Cộ</h5>
+                                  <div class="trackable">
+                                      <a href="" >Xe Hơi</a>
+                                      <a href="" >Xe Máy</a>
+                                      <a href="" >Xe Khác</a>
+                                      <a href="" >Phụ Kiện &amp; Phụ Tùng Xe Hơi</a>
+                                      <a href="" >Phụ Kiện &amp; Phụ Tùng Xe Máy</a>
+                                      <a href="" >Phụ Kiện &amp; Phụ Tùng Khác </a>
+                                  </div>
+                            </div>
+                            <div class="col-sm">
+                                  <h5>Bất Động Sản</h5>
+                                  <div class="trackable">
+                                      <a href="" >Mua Bán</a>
+                                      <a href="" >Cho Thuê</a>
+                                      <a href="" >Dự Án</a>
+                                      <a href="" >Kinh Nghiệm Mua Bán</a>
+                                  </div>
+                            </div>
+                            <div class="col-sm">
+                                <h5>Đồ Điện Tử</h5>
+                                <div class="trackable">
+                                  <a href=" ">Điên Thoại</a>
+                                  <a href=" ">Máy Tính Bảng</a>
+                                  <a href=" ">Laptop</a>
+                                  <a href=" ">Máy Tính Để Bàn</a>
+                                  <a href=" ">Máy Ảnh, Máy Quay</a>
+                                  <a href=" ">Tivi, Âm Thanh</a>
+                                  <a href=" ">Thiết Bị Đeo Thông Minh</a>
+                                  <a href=" ">Linh Kiện</a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-sm">
+                              <h5>Nội Thất, Đồ Gia Dụng</h5>
+                              <div class="trackable">
+                                  <a href=" ">Tủ Lanh, Máy Lạnh</a>
+                                  <a href=" ">Nội Ngoại Thất</a>
+                                  <a href=" ">Đồ Gia Dụng</a>
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <h5>Thời Trang, Đồ Dùng Cá Nhân</h5>
+                              <div class="trackable">
+                                  <a href=" ">Quần Áo</a>
+                                  <a href=" ">Đồng Hồ</a>
+                                  <a href=" ">Giày Dép</a>
+                                  <a href=" ">Túi Xách</a>
+                                  <a href=" ">Nước Hoa</a>
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <h5>Giải Trí, Thể Thao, Sở Thích</h5>
+                              <div class="trackable">
+                                  <a href=" ">Nhạc Cụ</a>
+                                  <a href=" ">Sách</a>
+                                  <a href=" ">Đồ Thể Thao, Dã Ngoại</a>
+                                  <a href=" ">Đồ Sưu Tầm, Đồ Cổ</a>
+                                  <a href=" ">Thiết Bị Chơi Game</a>
+                                  <a href=" ">Sở Thích Khác</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="container">
+                              <div class="row">
+                                <div class="col-sm">
+                                  <h5>Thú Cưng</h5>
+                                  <div class="trackable">
+                                      <a href=" ">Chó</a>
+                                      <a href=" ">Mèo</a>
+                                      <a href=" ">Chim</a>
+                                      <a href=" ">Thú Cưng Khác</a>
+                                  </div>
+                                </div>
+                                <div class="col-sm">
+                                  <h5>Đồ Văn Phòng, Công Nông</h5>
+                                  <div class="trackable">
+                                      <a href=" ">Đồ Dùng Văn Phòng</a>
+                                      <a href=" ">Đồ Chuyên Dụng, Giống Nuôi</a>
+                                  </div>
+                                </div>
+                                <div class="col-sm">
+                                  <br>
+                                  <a class="btn-other" href="#" >Các Loại Khác</a>            
+                              </div>
+                              </div>
+                            </div>
+                      
+                      </div>
+                      
+                      
+                      
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  
+                  </div>
+                  
+                  <script>
+                  // Get the modal
+                  var modal = document.getElementById('myModal');
+                  
+                  // Get the button that opens the modal
+                  var btn = document.getElementById("myBtn");
+                  
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+                  
+                  // When the user clicks the button, open the modal 
+                  btn.onclick = function() {
+                    modal.style.display = "block";
+                  }
+                  
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function() {
+                    modal.style.display = "none";
+                  }
+                  
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                    if (event.target == modal) {
+                      modal.style.display = "none";
+                    }
+                  }
+                  </script>
+  
       </div>
     </div>
   </div>
   <br><br>
 
-  <!-- Deal For You -->
 
-  <div class="container homepage-size">
+  <!-- Deal For You -->
+<div class="content-bg">
+  <div class="container homepage-size ">
     <h4>Dành Riêng Cho Bạn</h4>
     <div class="row">
       <div class="col-lg-2 portfolio-item">
@@ -235,10 +390,10 @@
       </div>
     </div>
   </div>
-
-
+</div>
   <!-- Marketing Icons Section -->
-
+<div class="prefooter-bg">
+  <br>
   <div class="row homepage-size">
     <div class="col-lg-4 mb-4">
       <div class="card h-100">
@@ -274,13 +429,12 @@
       </div>
     </div>
   </div>
-
-  <hr>
-
+</div>
+<br>
 
   <!-- Footer -->
 
-  <footer class="section footer-classic context-dark bg-image homepage-size style=" background: white;">
+  <footer class="section footer-classic context-dark bg-image homepage-size" style=" background:white;">
     <div class="container">
       <div class="row row-30">
         <div class="col-md-4 col-xl-5">
