@@ -35,7 +35,7 @@
         <div class="col-md-4 col-xl-3">
           <h5>Hỗ Trợ Khách Hàng</h5>
           <ul class="nav-list">
-            <li><a href="#">Trung tâm trợ giúp</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
             <li><a href="#">Quy định cần biết</a></li>
             <li><a href="about.php">Về chúng tôi</a></li>
           </ul>

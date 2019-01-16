@@ -7,6 +7,7 @@
 
 ?>
   <!-- Slider -->
+  <?php require_once __DIR__. "/partials/notifications.php" ?>
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">

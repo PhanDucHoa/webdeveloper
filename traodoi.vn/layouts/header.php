@@ -51,7 +51,7 @@ if (isset($_SESSION['name_id']))
 
         <?php if (isset($_SESSION['name_user'])): ?>
           <div class="header-menu">
-          <a href="thong-tin-user.php" id="btn-login" tabindex="0" role="button" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)"
+          <a href="profile.php?id=<?php echo $_SESSION['name_id'] ?>" id="btn-login" tabindex="0" role="button" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)"
             data-xtn2="91" data-page_name="Header (Homepage 2018)::Login" data-click_type="A">Tài khoản: <?php echo $_SESSION['name_user'] ?></a>
         </div>
 

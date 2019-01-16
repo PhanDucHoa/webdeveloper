@@ -1,24 +1,42 @@
 <?php 
-	require_once __DIR__. "/autoload/autoload.php";
-	if (!isset($_SESSION['name_user']))
-	{
-            echo "<script>alert('Bạn cần đăng nhập để có thể đăng tin!');location.href='dang-nhap.php'</script>";
-	}
+    require_once __DIR__. "/autoload/autoload.php";
+    if (!isset($_SESSION['name_user']))
+    {
+            echo "<script>alert('Bạn cần đăng nhập để có thể sửa thông tin sản phẩm!');location.href='dang-nhap.php'</script>";
+    }
+    
+        $id = intval(getInput('id'));
+        $sql = "SELECT * FROM offer WHERE offer.product_id = '".$id."'";
+        $current_user = $db->fetchsql($sql);
+        if ($current_user['0']['user_id'] != $_SESSION['name_id'])
+        {
+            echo "<script>alert('Bạn không có quyền chỉnh sửa sản phẩm này!');
+            location.href='index.php';</script>";
+        }
+    
  ?>
- <?php require_once __DIR__. "/layouts/header.php"; ?> 
- <?php 
- require_once __DIR__. "/autoload/autoload.php";
- 	$id = intval(getInput('id'));
+<?php 
+    require_once __DIR__. "/autoload/autoload.php";
+
+
+    $id = intval(getInput('id'));
+
+    $EditProduct = $db->fetchID("product",$id);
+    if (empty($EditProduct))
+    {
+        $_SESSION['error'] = "Dữ liệu không tồn tại!";
+        redirect("profile.php");
+    }
     $category = $db->fetchAll("category");
+    $product = $db->fetchAll("product");
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $data_product = 
+        $data = 
         [
             "name" => postInput('name'),
             "category_id" => postInput('category_id'),
             "description" => postInput('description')
         ];
-
         $error = [];
         if (postInput('name') == '')
         {
@@ -43,42 +61,34 @@
                 if ($file_error == 0)
                 {
                     $part = ROOT."product/";
-                    $data_product['thumbnail'] = $file_name;
+                    $data['thumbnail'] = $file_name;
                 }
             }
-            $id_insert = $db->insert("product",$data_product);
-            if ($id_insert)
+            $update = $db->update("product",$data,array("id"=>$id));
+            if ($update > 0)
             {
                 move_uploaded_file($file_tmp, $part.$file_name);
-                $id_product = $db->fetchOne("product", "name = '".$data_product['name']."'");
-                $data_offer =
-                [
-                	"user_id" => $id,
-                	"product_id" => $id_product['id']
-
-                ];
-                $id_offer_insert = $db->insert("offer",$data_offer);
-                $_SESSION['success'] = "Thêm mới thành công.";
+                $_SESSION['success'] = "Cập nhật thành công.";
                 redirect('index.php');
             }
             else
             {
-                $_SESSION['error'] = "Lỗi xảy ra khi thêm mới sản phẩm. Vui lòng thử lại.";
+                $_SESSION['error'] = "Lỗi xảy ra khi cập nhật sản phẩm. Vui lòng thử lại.";
                 redirect('index.php');
             }
-
+        }
 
         }
-    }
+    
  ?>
+<?php require_once __DIR__. "/layouts/header.php"; ?>
                     <!-- Nội dung bên trong website-->
                     <!-- Breadcrumbs-->
                      <div id="content-wrapper">
 
                         <div class="container-fluid col-md-8">
                             <!-- Page Content -->
-                            <h1>Đăng tải sản phẩm của bạn</h1>
-                            <p>Cung cấp thông tin chính xác để người dùng dễ dàng tìm thấy sản phẩm của bạn.</p>
+                            <h1>Sửa sản phẩm</h1>
                             <hr>
                             <div class="clearfix"></div>
                             <?php if (isset($_SESSION['error'])) :?>
@@ -92,7 +102,7 @@
                             <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
-                                    <input type="text" class="form-control" id="InputName" placeholder="Tên sản phẩm" name="name">
+                                    <input type="text" class="form-control" id="InputName" placeholder="Tên sản phẩm" name="name" value="<?php echo $EditProduct['name'] ?>">
                                     <?php if (isset($error['name'])): ?>
                                     <p class="text-danger"> <?php echo $error['name'] ?> </p>
                                 <?php endif ?>
@@ -101,13 +111,19 @@
                                     <label for="exampleInputEmail1">Danh mục sản phẩm</label>
                                     <select class="form-control" name="category_id">
                                         <option value="">- Chọn danh mục phù hợp với sản phẩm -</option>
-                                        <?php foreach ($category as $item):?>
-                                            <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                                        <?php foreach ($category as $item): ?>
+                                            <option value="<?php echo $item['id'] ?>"
+                                                <?php echo $EditProduct['category_id'] == $item['id'] 
+                                                ? 'selected = "selected"' : '' ?>><?php echo $item['name'] ?>
+                                            </option>
                                         <?php endforeach ?>
                                     </select>
                                     <?php if (isset($error['category_id'])): ?>
                                     <p class="text-danger"> <?php echo $error['category_id'] ?> </p>
                                 <?php endif ?>
+                                </div>
+                                <div>
+                                    <img src="<?php echo uploads() ?>product/<?php echo $EditProduct['thumbnail'] ?>" witdh="100px" height="100px">
                                 </div>
                                  <div class="form-group">
                                     <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
@@ -118,13 +134,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mô tả</label>
-                                    <textarea class="form-control" name="description" rows="5"></textarea>
+                                    <textarea class="form-control" name="description" rows="5"><?php echo $EditProduct['description'] ?></textarea>
                                     <?php if (isset($error['description'])): ?>
                                     <p class="text-danger"> <?php echo $error['description'] ?> </p>
                                 <?php endif ?>
                                 </div>
-                                <button type="submit" class="btn btn-warning">Đăng tải</button>
+                                <button type="submit" class="btn btn-warning">Lưu</button>
                             </form>
-                        </div>               
-
- <?php require_once __DIR__. "/layouts/footer.php"; ?> 
+                        </div>
+<?php require_once __DIR__. "/layouts/footer.php"; ?>                

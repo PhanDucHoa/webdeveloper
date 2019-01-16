@@ -39,6 +39,10 @@
                 }
             }
         }
+        if (postInput('password') == '')
+        {
+            $error['password'] = "Bạn cần nhập mật khẩu!";     
+        }
         if (postInput('password') != NULL && postInput('re_password') != NULL)
             {
                 if (postInput('password') != postInput('re_password'))
@@ -82,10 +86,10 @@
                                 <li class="breadcrumb-item">
                                     <a href="<?php echo modules("admin") ?>">Quản lý Admin</a>
                                 </li>
-                                <li class="breadcrumb-item active">Thêm mới</li>
+                                <li class="breadcrumb-item active">Sửa</li>
                             </ol>
                             <!-- Page Content -->
-                            <h1>Thêm Admin</h1>
+                            <h1>Sửa Admin</h1>
                             <hr>
                             <div class="clearfix"></div>
                             <?php if (isset($_SESSION['error'])) :?>
