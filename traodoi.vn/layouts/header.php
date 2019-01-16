@@ -4,6 +4,7 @@ if (isset($_SESSION['name_id']))
 {
   $user_id = $_SESSION['name_id'];
 }
+$category = $db->fetchAll('category');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +46,9 @@ if (isset($_SESSION['name_id']))
       </div>
       <div class="header-menus">
         <div class="header-menu">
+          <button class="btn btn-warning" id="myBtn"><strong>Danh mục</strong></button>
+        </div>
+        <div class="header-menu">
           <a href="tim-kiem.php" class="trackable" data-event_type="link" data-event_name="Header (Homepage 2018)" data-xtn2="91"
             data-page_name="Header (Homepage 2018)::Tim Mon Hang" data-click_type="A">Tìm Hàng</a>
         </div>
@@ -81,3 +85,73 @@ if (isset($_SESSION['name_id']))
 
   </div><br>
   <hr>
+  <!--Mới thêm categories vào đây -->
+                          <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h2>Lựa Chọn Chuyên Mục</h2> 
+                        <span class="close">&times;</span>
+                      </div>
+                      
+                      
+                      <div class="modal-body">
+                      
+                        <div class="container" class ="all-cat-item-row">
+                          <div class="category-items">
+        <?php foreach ($category as $item): ?>
+        <a href="danh-muc-san-pham.php?id=<?php echo $item['id'] ?>" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
+          data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)" data-click_type="N">
+          <img src="<?php echo uploads() ?>category/<?php echo $item['icon'] ?>">
+          <div><?php echo $item['name']  ?></div>
+        </a>
+         <?php endforeach ?>
+      </div>
+                        </div>
+                        
+                       </div>
+                      
+                      </div>
+                      
+                      
+                      
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  
+                  </div>
+                  
+                  <script>
+                  // Get the modal
+                  var modal = document.getElementById('myModal');
+                  
+                  // Get the button that opens the modal
+                  var btn = document.getElementById("myBtn");
+                  
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+                  
+                  // When the user clicks the button, open the modal 
+                  btn.onclick = function() {
+                    modal.style.display = "block";
+                  }
+                  
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function() {
+                    modal.style.display = "none";
+                  }
+                  
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                    if (event.target == modal) {
+                      modal.style.display = "none";
+                    }
+                  }
+                  </script>
+  
+      </div>
+    </div>
+  </div>
