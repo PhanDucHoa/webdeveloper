@@ -47,7 +47,7 @@
 	  background: linear-gradient(left top,#5343E8,#9654DD);
   }
   
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: 600;}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: 300;}
 	  
 .card-img-top{  
 	  max-width:158px;
@@ -105,7 +105,7 @@
     margin: 10px;
 }
   
-  /* Slider 3 text */
+  /* Slider*/
 
   .special{
       color:#fc9807;
@@ -226,3 +226,17 @@ ul, ol {
     visibility: hidden;
     transition: .22s ease;
 }
+
+/* Deal For You */
+
+.content-bg {
+	background-color: #faf9f5;
+}
+
+/* Marketing Icons Section */
+
+.prefooter-bg {
+	background-color: #f3f2ee;
+}
+
+
