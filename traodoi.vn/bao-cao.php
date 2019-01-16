@@ -9,13 +9,11 @@
  <?php 
  require_once __DIR__. "/autoload/autoload.php";
  	$id = intval(getInput('id'));
-    $category = $db->fetchAll("category");
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $data_product = 
+        $data_report = 
         [
-            "name" => postInput('name'),
-            "category_id" => postInput('category_id'),
+            "description" => postInput('description')
         ];
 
         $error = [];
@@ -25,17 +23,16 @@
         }
         if (empty($error))
         {
-            $id_offer_insert = $db->insert("report",$data_report);
-            if ($id_insert)
-            {
-                $id_product = $db->fetchOne("product", "name = '".$data_product['name']."'");
+            $id_product = $id;
                 $data_report =
                 [
-                	"user_id" => $id,
-                	"product_id" => $id_product['id']
-
+                    "user_id" => $_SESSION['name_id'],
+                    "product_id" => $id_product,
+                    "description" => postInput('description')
                 ];
-                $id_report_insert = $db->insert("report",$data_report);
+            $id_report_insert = $db->insert("report",$data_report);
+            if ($id_report_insert)
+            {
                 $_SESSION['success'] = "Báo cáo sản phẩm thành công.";
                 redirect('index.php');
             }
@@ -67,33 +64,7 @@
                                     </button>
                                 </div>
                             <?php endif; ?>
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên sản phẩm</label>
-                                    <input type="text" class="form-control" id="InputName" placeholder="Tên sản phẩm" name="name">
-                                    <?php if (isset($error['name'])): ?>
-                                    <p class="text-danger"> <?php echo $error['name'] ?> </p>
-                                <?php endif ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Danh mục sản phẩm</label>
-                                    <select class="form-control" name="category_id">
-                                        <option value="">- Chọn danh mục phù hợp với sản phẩm -</option>
-                                        <?php foreach ($category as $item):?>
-                                            <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
-                                        <?php endforeach ?>
-                                    </select>
-                                    <?php if (isset($error['category_id'])): ?>
-                                    <p class="text-danger"> <?php echo $error['category_id'] ?> </p>
-                                <?php endif ?>
-                                </div>
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
-                                    <input type="file" class="form-control" id="InputThumbnail" placeholder="Hình ảnh" name="thumbnail">
-                                    <?php if (isset($error['thumbnail'])): ?>
-                                    <p class="text-danger"> <?php echo $error['thumbnail'] ?> </p>
-                                <?php endif ?>
-                                </div>
+                            <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mô tả</label>
                                     <textarea class="form-control" name="description" rows="5"></textarea>
@@ -101,7 +72,7 @@
                                     <p class="text-danger"> <?php echo $error['description'] ?> </p>
                                 <?php endif ?>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Đăng tải</button>
+                                <button type="submit" class="btn btn-danger">Gửi báo cáo</button>
                             </form>
                         </div>               
 

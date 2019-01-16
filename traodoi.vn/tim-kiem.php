@@ -91,12 +91,7 @@
       
       <?php endforeach ?>
       <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">«</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
+        
         <?php for($i = 1; $i <= $sotrang; $i++): ?>
                                     <?php 
                                         if(isset($_GET['page']))
@@ -113,12 +108,6 @@
                                         </a>
                                     </li>
                                 <?php endfor ?>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">»</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
       </ul>
     </div>
   <?php endif; ?>

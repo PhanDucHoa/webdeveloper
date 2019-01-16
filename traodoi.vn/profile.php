@@ -72,7 +72,7 @@
                 unset($_SESSION['name_user']);  
                 unset($_SESSION['name_id']);    
                 $_SESSION['success'] = "Cập nhật thành công. Mời bạn đăng nhập lại để tiếp tục.";
-                redirect('index.php');
+                redirect('dang-nhap.php');
             }
             else
             {

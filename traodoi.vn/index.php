@@ -60,7 +60,7 @@
 
       <div class="category-items">
         <?php foreach ($category as $item): ?>
-        <a href="" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
+        <a href="danh-muc-san-pham.php?id=<?php echo $item['id'] ?>" class="trackable" data-event_type="link" data-event_name="Browse by Category (Homepage 2017)"
           data-xtn2="91" data-page_name="Browse by Category (Homepage 2017)" data-click_type="N">
           <img src="<?php echo uploads() ?>category/<?php echo $item['icon'] ?>">
           <div><?php echo $item['name']  ?></div>

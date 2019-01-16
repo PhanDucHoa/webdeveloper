@@ -48,6 +48,7 @@
                 else
                     {
                 $_SESSION['error'] = "Có lỗi xảy ra. Vui lòng thử lại.";
+                redirectAdmin("category");
                     }
             }
 

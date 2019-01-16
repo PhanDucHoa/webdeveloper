@@ -7,12 +7,12 @@
             <a class="brand" href="index.php"><img class="brand-logo-light" src="<?php echo base_url() ?>public/frontend/image/logo.jpg" alt="" width="280"
                 srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a><br></br>
 
-            <p>1doi1.vn là nền tảng trao đổi hàng hóa đầu tiên tại Việt Nam - Cho phép mọi người đăng tin trao đổi
+            <p>1DOI1.VN là nền tảng trao đổi hàng hóa đầu tiên tại Việt Nam - Cho phép mọi người đăng tin trao đổi
               các
-              loại sản phẩm một cách dễ dàng , tiện lợi</p>
+              loại sản phẩm một cách dễ dàng, tiện lợi.</p>
 
             <!-- Rights-->
-            <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>1doi1.vn</span><span>. </span><span>All
+            <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>1DOI1.VN</span><span>. </span><span>All
                 Rights Reserved.</span></p>
           </div>
         </div>
@@ -20,7 +20,7 @@
           <h5>Liên Hệ</h5>
           <dl class="contact-list">
             <dt>Địa Chỉ</dt>
-            <dd>Đại Học Công Nghệ Thông Tin</dd>
+            <dd>Trường Đại Học Công Nghệ Thông Tin, phường Linh Trung, quận Thủ Đức, Tp. HCM</dd>
           </dl>
           <dl class="contact-list">
             <dt>Email:</dt>
@@ -35,8 +35,8 @@
         <div class="col-md-4 col-xl-3">
           <h5>Hỗ Trợ Khách Hàng</h5>
           <ul class="nav-list">
-            <li><a href="#">Câu hỏi thường gặp</a></li>
-            <li><a href="#">Quy định cần biết</a></li>
+            <li><a href="cau-hoi.php">Câu hỏi thường gặp</a></li>
+            <li><a href="giao-dich-an-toan.php">Giao dịch an toàn</a></li>
             <li><a href="about.php">Về chúng tôi</a></li>
           </ul>
         </div>
@@ -56,8 +56,8 @@
   <script src="<?php echo base_url() ?>public/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
         window.alert = function(){};
         var defaultCSS = document.getElementById('bootstrap-css');
         function changeCSS(css){
@@ -123,7 +123,6 @@
         });
       });
           </script>
-
 </body>
 
 </html>

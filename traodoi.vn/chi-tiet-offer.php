@@ -36,6 +36,7 @@
             <li>Email liên lạc: <?php echo $item['email'] ?></li>
             <?php endforeach ?>
           </ul>
+          <a href="bao-cao.php?id=<?php echo $id ?>" class="btn btn-danger align-center mt-4">Báo cáo sản phẩm</a>
         </div>
 
       </div>
